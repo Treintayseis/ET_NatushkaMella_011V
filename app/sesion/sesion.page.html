@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-card>    
+  <ion-img src="assets/icon/duoc.png"></ion-img><ion-card-header>      
+    <ion-card-title style="text-align: center;">Iniciar Sesion</ion-card-title>
+  </ion-card-header>
+   
+  <form [formGroup]="loginForm">
+    <ion-item>
+      <ion-input type="text" placeholder="Ingrese Nombre Usuario" label="Usuario:" labelPlacement="floating"
+          formControlName="username">
+      </ion-input>
+    </ion-item>
+
+      <div id="alerta" *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || 
+                  loginForm.get('username')?.touched)">
+        <div id="alerta" *ngIf="loginForm.get('username')?.hasError('required')">
+          *Usuario obligatorio
+        </div>
+        <div id="alerta" *ngIf="loginForm.get('username')?.hasError('minlength')">
+          *Usuario debe tener mínimo 6 caracteres
+        </div>
+      </div>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Ingrese Contraseña" label="Contraseña:" labelPlacement="floating"
+          formControlName="password">
+      </ion-input>
+    </ion-item>
+
+    <div id="alerta" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || 
+                loginForm.get('password')?.touched)">
+      <div id="alerta" *ngIf="loginForm.get('password')?.hasError('required')">
+        *Contraseña obligatoria
+      </div>
+      <div id="alerta" *ngIf="loginForm.get('password')?.hasError('minlength')">
+        *Contraseña debe tener mínimo 6 caracteres
+      </div>
+    </div>
+
+
+    <div style="text-align: center; margin-top:30px">
+      <ion-button (click)="login()" [disabled]="!loginForm.valid" expand="full" fill="solid" shape="round" color="warning" style="font-style: normal; font-weight: bold;" >
+        Iniciar Sesion 
+      </ion-button> 
+    </div>
+    <br>
+    <div style="text-align: center; margin-top: 10px;">
+      <a (click)="goToRecoveryPage()" style="color: white;">¿Olvidó su contraseña?</a>
+    </div>
+    <br> 
+  </form>
+</ion-card>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title >I v e n p a s s  </ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+    
+
+  </ion-toolbar>
+</ion-footer>

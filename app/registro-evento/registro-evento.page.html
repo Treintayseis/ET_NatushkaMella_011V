@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inscripcion a Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  
+  <form style="margin-top: 50px;">
+    <ion-item>
+       <ion-input type="text" placeholder="Ingrese nombre" label=" Nombre:"
+            labelPlacement="floating" name="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Ingrese Apellido" label="Apellido:"
+           labelPlacement="floating" name="apellido"></ion-input>
+   </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Ingrese Rut.." label="Rut:"
+           labelPlacement="floating" name="rut" ></ion-input>
+    </ion-item>
+
+   <ion-item>
+    <ion-input type="email" placeholder="Ingrese Email" label="Email:"
+         labelPlacement="floating" name="email" ></ion-input>
+   </ion-item>
+
+   <div style="text-align: center; margin-top:30px;">
+    <ion-button shape="round" color="success">
+      Realizar Inscripcion
+    </ion-button>
+   </div>
+
+
+  </form>
+
+</ion-content>

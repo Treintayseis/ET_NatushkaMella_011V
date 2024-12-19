@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Mis inscripciones
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    
+
+  <ion-list>
+    <ion-item *ngFor="let inscripcion of inscripciones">
+      <ion-label>
+        <h2>{{ inscripcion.eventName}}</h2>
+        <p>Fecha: {{ inscripcion.eventDate }}</p>
+        <p>Usuario: {{ inscripcion.username }}</p>        
+        <ion-button shape="round"(click)="buscarRegistro(inscripcion)" color="warning">Ver Detalles</ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" fill="solid" shape="round" color="dark" (click)="atras()">Volver</ion-button>
+</ion-card>
+</ion-content>

@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="volver()">
+        Atras
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Mi Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="usuario; else loading">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title style="color: rgb(251, 245, 245); text-align: center;">Datos Usuario</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        
+        <!-- Mostrar imagen de perfil -->
+        <div class="profile-picture">
+          <img [src]="usuario.imagen || imagenTemp" alt="Foto de perfil" class="profile-img"/>
+        </div>
+        <div style="text-align: center;">
+        <ion-label>Foto de Perfil</ion-label>
+      </div>
+        <!-- Campo para subir foto de perfil -->
+        <ion-item>
+          <input type="file" (change)="onFileChange($event)" accept="image/*" />
+        </ion-item>
+  
+        <!-- Editar nombre de usuario -->
+        <ion-item>
+          <ion-label>Nombre: </ion-label>
+          <ion-input [(ngModel)]=" usuario.username"  placeholder="Nombre de Usuario" required></ion-input>
+        </ion-item>
+
+        <!-- Editar email -->
+        <ion-item>
+          <ion-label>Email:</ion-label>
+          <ion-input [(ngModel)]="usuario.email" placeholder="Email" type="email" required></ion-input>
+        </ion-item>
+
+        <!-- Editar contraseña -->
+        <ion-item>
+          <ion-label>Contraseña:</ion-label>
+          <ion-input 
+            [(ngModel)]="usuario.password" 
+            placeholder="Contraseña" 
+            [type]="passwordVisible ? 'text' : 'password'" 
+            required>
+          </ion-input>
+          <!-- Icono para alternar visibilidad de la contraseña -->
+          <ion-button fill="clear" (click)="togglePasswordVisibility()">
+            <ion-icon [name]="passwordVisible ? 'eye-off' : 'eye'"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <!-- Botón para guardar los cambios -->
+        <ion-button expand="full" fill="solid" shape="round" (click)="actualizarUsuario()" color="dark">Actualizar Perfil</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Mostrar un mensaje mientras se cargan los datos -->
+  <ng-template #loading>
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando datos de usuario...</p>
+  </ng-template>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>I v e n p a s s  </ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+    
+
+  </ion-toolbar>
+</ion-footer>

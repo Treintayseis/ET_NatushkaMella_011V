@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-title>
+      Eventos
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card><br>
+    <ion-card-title style="text-align: center; font-weight: bold;">PROXIMOS EVENTOS</ion-card-title><br>
+  </ion-card>
+  
+  <ion-card *ngFor="let event of events">
+
+  <ion-card-header>
+    <ion-card-title> {{ event.nombre }}</ion-card-title>
+    <ion-card-subtitle>Fecha: {{ event.fecha }} - {{ event.hora }} hrs</ion-card-subtitle>
+    <h4 style> {{ event.lugar }}</h4>
+  </ion-card-header>
+ 
+  <ion-card-content>
+    <img [src]="event.imagen" alt="Imagen del evento {{ event.nombre }}" />    
+    <h3>Descripción: {{ event.descripcion }}</h3>
+  </ion-card-content>
+      <div>
+        <ion-button (click)="inscribirEvento(event)"expand="full" fill="solid" shape="round" color="warning" style="font-style: normal; font-weight: bold;" >I N S C R I B I R</ion-button>
+       <br></div>
+       <div *ngIf="inscripcionStatus">
+        <p>{{ inscripcionStatus }}</p>
+      </div>
+
+ 
+    </ion-card>
+</ion-content>

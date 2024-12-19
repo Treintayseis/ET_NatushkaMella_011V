@@ -1,0 +1,61 @@
+  <ion-header [translucent]="true">
+    
+    <ion-toolbar >
+      <ion-title slot="end" >I v e n p a s s</ion-title>
+    </ion-toolbar>
+    
+  </ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-card>
+    <ion-img src="assets/icon/duoc.png"></ion-img>
+    <ion-card-header>       
+      <ion-card-title >Bienvenidos</ion-card-title>
+    </ion-card-header>
+    <br>
+  <div style="text-align: center;">
+    <ion-button (click)="session()" expand="full" fill="solid" shape="round" color="warning" style="font-weight: bold;">
+        Iniciar sesion
+    </ion-button>
+  </div>
+  <br>
+  <div style="text-align: center;">
+    <ion-button (click)="register()" expand="full" fill="solid" shape="round" color="warning" style="font-weight: bold;">
+        Crear usuario
+    </ion-button>
+  </div> <br><br>
+
+
+
+
+
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title id="letra">I v e n p a s s  </ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+    
+
+  </ion-toolbar>
+</ion-footer>

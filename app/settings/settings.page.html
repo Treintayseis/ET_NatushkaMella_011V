@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Modificar datos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-item>
+        <ion-label position="stacked">Modificar Nombre Usuario:</ion-label>
+        <ion-input type="text" placeholder="Ingrese su nombre de usuario" name="Nombre" c></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Modificar Email:</ion-label>
+        <ion-input type="text" placeholder="Ingrese su Email" name="Email" ></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Modificar Password:</ion-label>
+        <ion-input type="password" placeholder="Ingrese su password" name="pass" ></ion-input>
+      </ion-item>
+
+
+  </ion-card-content>
+  <div style="text-align: center;">
+    <ion-button (click)="modificar()" fill="solid" shape="round" color="warning">
+      Actualizar datos
+    </ion-button>
+  </div>
+  <br>
+
+
+
+
+  </ion-card>
+</ion-content>

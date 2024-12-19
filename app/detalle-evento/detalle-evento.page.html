@@ -1,0 +1,101 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="volver()">
+        Atras
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Detalle evento nscrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card><br>
+    <ion-card-title style="text-align: center; font-weight: bold;">DETALLE </ion-card-title><br>
+  </ion-card>
+  
+  <!-- Verificar si la inscripción está disponible -->
+  <div *ngIf="inscripcion; else noInscripcion">
+    <ion-card style="margin-top: 5%;">
+      <ion-card-header style="background-color: rgb(9, 3, 49);">
+        <ion-card-title style="color:rgb(227, 227, 238);">
+          {{ inscripcion.eventName }}
+        </ion-card-title>
+        <ion-card-subtitle> {{inscripcion.eventDate}}</ion-card-subtitle>
+      </ion-card-header>
+<br>
+      <ion-card-content>
+
+       <p>USUARIO: {{ inscripcion.username }}</p>
+       EMAIL: {{ inscripcion.email }}
+
+      </ion-card-content>
+
+  <div>
+      <ion-button (click)="generarQr()" expand="full" shape="round" color="success" style="font-weight: bold; font-style: oblique;">
+        Generar QR
+      </ion-button>
+    </div>
+      <ion-card-content style="text-align: center;">
+        <qrcode *ngIf="qrdata" [qrdata]="qrdata" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+      </ion-card-content>
+
+      <!-- Botón de eliminar inscripción -->
+      <ion-button (click)="confirmarEliminacion(inscripcion)" expand="full" shape="round" color="danger" style="font-weight: bold; font-style: oblique;" >
+        Eliminar 
+      </ion-button>
+      <br>
+    </ion-card>
+  </div>
+
+  <!-- Mensaje si no hay inscripción -->
+  <ng-template #noInscripcion>
+    <ion-card style="margin-top: 5%;">
+      <ion-card-header>
+        <ion-card-title>No se encontró la inscripción</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Lo sentimos, no pudimos encontrar los detalles de la inscripción para este evento. Vuelve atrás y verifica los datos.</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Escribe tu opinión</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Área de texto para la opinión -->
+      <ion-textarea [(ngModel)]="opinion" placeholder="Escribe aquí tu opinión..." rows="3" clearInput></ion-textarea>
+      
+      <!-- Botón para enviar la opinión -->
+      <div style="text-align: end; margin-top: 16px;">
+        <ion-button color="light" (click)="enviarOpinion()" expand="full" shape="round" style="font-weight: bold; font-style: oblique;">Enviar Opinión</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title id="letra">I v e n p a s s  </ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+    
+
+  </ion-toolbar>
+</ion-footer>
