@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Recuperar Contraseña</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+ <ion-card>
+  <ion-card-header>
+    <ion-toolbar>
+      <ion-card-title style="text-align: center;">Recuperar Contraseña</ion-card-title>
+    </ion-toolbar>
+  </ion-card-header>
+  
+    <ion-item>
+      <ion-input [(ngModel)]="email"  style="color: white;" placeholder="Ingrese email" type="email" label="Email" labelPlacement="floating"></ion-input>
+    </ion-item>
+  <div>
+    <ion-button expand="full" (click)="recuperarContrasenia()" color="light" shape="round" >Recuperar Contraseña </ion-button>
+  </div> <br>
+  <div>
+    <ion-text *ngIf="mensaje" style="text-align: center;">
+      <p>{{ mensaje }}</p>
+    </ion-text>
+  </div>
+
+</ion-card>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title id="letra">I v e n p a s s C o </ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram" style="color: white;"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook" style="color: white;"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter" style="color: white;"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+    
+
+  </ion-toolbar>
+</ion-footer>

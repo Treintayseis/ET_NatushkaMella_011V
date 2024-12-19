@@ -1,0 +1,112 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+
+
+
+ion-tab-bar {
+  --background: #0b2732;
+    ion-tab-button[active]{
+        ion-label{
+            color: #aeaec7;
+        }
+    }
+    ion-tab-button{
+        ion-icon{
+            color:#5dd7c1;
+        }
+    }
+    &:hover{
+        ion-label{
+            color:aliceblue;
+        }
+    }
+}
+
+ion-content{
+    --background:linear-gradient(to right, rgb(11, 39, 50), #157575);
+}
+ion-card-title, ion-card-subtitle,ion-title, ion-input{
+  color: #faf4f4;
+  font-weight: bolder;
+}
+
+
+ion-card {
+    --background:rgba(87, 36, 36, 0.1); 
+    color: rgb(240, 240, 240); 
+    margin: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(241, 232, 232, 0.5);
+    overflow: hidden;
+  }
+
+
+  ion-input {
+    --background:  rgb(7, 0, 20,0.3);  /* Fondo oscuro */
+    --color: #fff;  /* Color de texto blanco */
+    --placeholder-color: #bbb;  /* Color del texto del placeholder más claro */
+    --border-color:  rgb(7, 0, 20,0.3);  /* Color del borde */
+  }
+  ion-list{
+    --background: rgba(245, 242, 249, 0.3) ; /* Fondo oscuro */
+
+  }
+  ion-item {
+    --background:#faf4f4,0.1; /* Fondo oscuro */
+  }
+  ion-toolbar{
+    --background:linear-gradient(to right, rgb(11, 39, 50), rgb(21, 117, 117));
+  }
+  ion-footer{
+
+    --background:linear-gradient(to right, rgb(7, 0, 20), rgb (7, 0, 20));
+
+  } 
+  ion-menu{
+    --background:linear-gradient(to right, rgb(18, 0, 18), rgb(32, 3, 27));
+}
+/* // QR SCANNER // */
+
+body.scanner-active {
+  --background: transparent;
+  background: transparent;
+  --ion-background-color: transparent;
+}
+
+/* // --------- // */

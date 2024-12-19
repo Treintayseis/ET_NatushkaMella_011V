@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>Crear Usuario</ion-title>
+      <ion-buttons slot="end">
+        <ion-back-button defaultHref="/"> </ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-card>
+
+      <ion-card-header>      
+        <ion-card-title style="text-align: center;">Registro Colaborador</ion-card-title>
+      </ion-card-header>
+  
+      <form [formGroup]="registroForm">
+        <ion-item>
+          <ion-input  type="text" placeholder="Nombre Usuario" formControlName="username" label="Usuario:" labelPlacement="floating" style="color: #ffffff;" ></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-input type="email" placeholder="Email Usuario" formControlName="email" label="Email:" labelPlacement="floating" style="color: #ffffff;"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-input type="password" placeholder="Contraseña Usuario" formControlName="password" label="Contraseña:" labelPlacement="floating" style="color: #ffffff;"></ion-input>
+        </ion-item>
+              
+        <div style="text-align: center; margin-top: 20px; margin-block-end: 20px;">
+          <ion-button (click)="crearUsuario()" [disabled]="!registroForm.valid"  expand="full" fill="solid" shape="round" color="dark" style="font-style: normal; font-weight: bold;" >
+            Crear Usuario
+          </ion-button>
+        </div>
+              
+  
+      </form>
+    </ion-card>
+    </ion-content>
+    
+    
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title id="letra">I v e n p a s s C o </ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+    
+
+  </ion-toolbar>
+</ion-footer>

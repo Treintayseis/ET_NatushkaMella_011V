@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Asistentes</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="atras()"> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card >
+  <ion-header>
+    <ion-toolbar>
+      <ion-title style="text-align: center; ">Participantes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-card>
+
+<ion-card>
+  
+
+  <ion-list>
+    <ion-item *ngFor="let participante of participantesEvento">
+      <ion-label>
+        <h3>Nombre: {{ participante.username}}</h3>  
+        <h4>Email: {{ participante.email}}</h4>  
+      </ion-label>      
+    </ion-item>
+    </ion-list>
+
+  </ion-card>
+  </ion-content>
+
+
+
+ <ion-footer>
+  <ion-toolbar>
+    <ion-title id="letra">I v e n p a s s C o </ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+    
+
+  </ion-toolbar>
+</ion-footer>

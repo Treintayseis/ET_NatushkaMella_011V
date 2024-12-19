@@ -1,0 +1,59 @@
+<ion-header>
+    
+  <ion-toolbar >
+    <ion-title style="text-align: end;">I v e n p a s s C o</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<ion-card>
+  <ion-card-header>      
+    <ion-card-title style="text-align: center; color: rgb(255, 255, 255);">Bienvenido a IvenPassCo</ion-card-title>
+  </ion-card-header>
+  <img src="assets/icon/1992.png" alt="">
+<div style="text-align: center;">
+  <br><br>
+  <ion-button (click)="session()" fill="solid" shape="round" color="dark"  expand="full">
+      Iniciar sesion
+  </ion-button>
+</div>
+<br>
+<div style="text-align: center;">
+  <ion-button (click)="register()"  fill="solid" shape="round" color="dark" expand="full">
+      Crear usuario
+  </ion-button>
+  <br><br>
+</div>
+
+
+
+
+</ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title id="letra">I v e n p a s s C o </ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram" style="color: white;"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook" style="color: white;"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter" style="color:white;"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+    
+
+  </ion-toolbar>
+</ion-footer>

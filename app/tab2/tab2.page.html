@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Crear nuevo evento </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="text-align: center;">Crear Evento</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-item>
+        <ion-label style="color: white;" position="stacked">Titulo Evento:</ion-label>
+        <ion-input style="color: white;" type="text" placeholder="Agregue nombre del evento/actividad" name="nombre" [(ngModel)]="newEvento.nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="color: white;" position="stacked">Imagen:</ion-label>
+        <input style="color: white;" type="file" (change)="onImageSelected($event)" />
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="color: white;" position="stacked">Fecha:</ion-label>
+        <ion-input  style="color: white;" type="date" placeholder="Agregue una fecha" name="fecha" [(ngModel)]="newEvento.fecha"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="color: white;" position="stacked">Hora:</ion-label>
+        <ion-input style="color: white;" type="time" placeholder="Agregue horario" name="hora" [(ngModel)]="newEvento.hora"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="color: white;" position="stacked">Lugar:</ion-label>
+        <ion-input style="color: white;" type="text" placeholder="Agregue lugar" name="lugar" [(ngModel)]="newEvento.lugar"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label  style="color: white;"position="stacked">Descripcion:</ion-label>
+        <ion-input style="color: white;" type="text" placeholder="Agregue descripcion" name="descripcion" [(ngModel)]="newEvento.descripcion"></ion-input>
+      </ion-item>
+<br>
+      <div style="text-align: center;">
+        <ion-button (click)="crearEvento()" fill="solid" shape="round" color="dark">
+          Agregar nuevo evento
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle evento</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="atras()"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>  
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngIf="evento">
+    <ion-card-header>
+      <ion-card-title>{{ evento.nombre  || 'No hay descripción disponible.'}}</ion-card-title>
+      <ion-card-subtitle >{{ evento.fecha  || 'No hay descripción disponible.' }} - {{ evento.hora || 'No hay descripción disponible.' }}</ion-card-subtitle>
+      <h4 style="color: white;"> {{ evento.lugar  || 'No hay descripción disponible.'}}</h4>
+    </ion-card-header>
+    <ion-card-content>
+      <br>
+      <img *ngIf="evento.imagen" [src]="evento.imagen" alt="Imagen del evento" />
+      <p style="text-align: justify;">{{ evento.descripcion || 'No hay descripción disponible.' }}</p>
+      
+      
+    <div>
+      <ion-button expand="full" (click)="update()" color="success" shape="round">Actualizar/Modificar</ion-button>
+    </div>
+    <div>
+      <ion-button expand="full" (click)="listar()" color="dark" shape="round">Asistentes</ion-button>
+    </div>
+    <div>
+      <ion-button expand="full" (click)="eliminar()" color="danger" shape="round">Eliminar</ion-button>
+    </div>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar >
+    <ion-title id="letra">I v e n p a s s C o </ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+    
+
+  </ion-toolbar>
+</ion-footer>

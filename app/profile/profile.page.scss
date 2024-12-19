@@ -1,0 +1,19 @@
+
+.profile-picture {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  
+  .profile-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 25px;
+  }
+ion-input{
+    text-align: end;
+}
+

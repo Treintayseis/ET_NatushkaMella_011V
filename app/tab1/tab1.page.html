@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bienvenidos/as!!</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+<ion-card >
+  <ion-header>
+    <ion-toolbar>
+      <ion-title style="text-align: center; ">Proximos eventos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-card>
+
+  <ion-card *ngFor="let event of events">
+    <ion-card-header (click)="buscarRegistro(event)">
+      <ion-card-subtitle> {{ event.nombre }}</ion-card-subtitle>
+      <ion-card-title> {{ event.fecha }}-{{ event.hora }} hrs</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="event.imagen" alt="Imagen del evento {{ event.nombre }}" />
+      <p> {{ event.descripcion }}</p>
+    </ion-card-content>
+</ion-card>
+</ion-content>  
